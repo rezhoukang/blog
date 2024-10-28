@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>欢迎来到rezhoukang的博客 | 欢迎来到rezhoukang的博客</title><meta name="author" content="rezhoukang"><meta name="copyright" content="rezhoukang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="task1 共模攻击#task1 第一步巨tm简单import gmpy2import libnumimport random#rb&#x3D;read+转为b，b是字节，二进制形式，read（）是全读，read（10）是读10字节flag&#x3D;open(“flag1”,”rb”).read()#把字符串拆分为单个字符，ascii转数字再拼起来#libnum.n2s(number)是逆向如上">
+<meta property="og:type" content="website">
+<meta property="og:title" content="欢迎来到rezhoukang的博客">
+<meta property="og:url" content="http://example.com/rsa%E4%B9%8B%E5%A5%97%E5%A8%83wp.html">
+<meta property="og:site_name" content="欢迎来到rezhoukang的博客">
+<meta property="og:description" content="task1 共模攻击#task1 第一步巨tm简单import gmpy2import libnumimport random#rb&#x3D;read+转为b，b是字节，二进制形式，read（）是全读，read（10）是读10字节flag&#x3D;open(“flag1”,”rb”).read()#把字符串拆分为单个字符，ascii转数字再拼起来#libnum.n2s(number)是逆向如上">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-10-28T11:39:48.807Z">
+<meta property="article:modified_time" content="2024-10-28T11:39:48.807Z">
+<meta property="article:author" content="rezhoukang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/rsa%E4%B9%8B%E5%A5%97%E5%A8%83wp.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '欢迎来到rezhoukang的博客',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-10-28 19:39:48'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="欢迎来到rezhoukang的博客"><span class="site-name">欢迎来到rezhoukang的博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">欢迎来到rezhoukang的博客</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="task1-共模攻击"><a href="#task1-共模攻击" class="headerlink" title="task1 共模攻击"></a>task1 共模攻击</h1><p>#task1 第一步巨tm简单<br>import gmpy2<br>import libnum<br>import random<br>#rb&#x3D;read+转为b，b是字节，二进制形式，read（）是全读，read（10）是读10字节<br>flag&#x3D;open(“flag1”,”rb”).read()<br>#把字符串拆分为单个字符，ascii转数字再拼起来<br>#libnum.n2s(number)是逆向如上<br>m&#x3D; libnum.s2n(flag)<br>#生成1024bit质数相当于 大约 308 位 十进制数，1024*0.3&#x3D;308<br>p &#x3D; libnum.generate_prime(1024)<br>q &#x3D; libnum.generate_prime(1024)<br>n1 &#x3D; p * q<br>n2 &#x3D; p * q<br>e1 &#x3D; 2333<br>e2 &#x3D; 233333<br>c1 &#x3D; pow(m, e1, n1)<br>c2 &#x3D; pow(m, e2, n2)<br>print(“n1&#x3D;”, n1)<br>print(“n2&#x3D;”, n2)<br>print(“e1&#x3D;”, e1)<br>print(“e2&#x3D;”, e2)<br>print(“c1&#x3D;”, c1)<br>print(“c2&#x3D;”, c2)<br>n1&#x3D; 20688295326799885469942053730256934117014637151258278129136776521510989233595867577295112616845005908459077781330791527696392017119074636308132987898760947942716987240345848939694761715997362159888600973826751156900555609220790888743740025999230299793544064243879043298212916409644995882402216269430500984875293604247387347906864813420631209694092421835122691978204757365259843133911041855510730348491761489809217001574388802480536754806871602079002639078090882686972389846197310860357454814045493713625987281671002453030336040100862762243166515375325453478710112772872828512191092817916875275018515638616468408401499<br>n2&#x3D; 20688295326799885469942053730256934117014637151258278129136776521510989233595867577295112616845005908459077781330791527696392017119074636308132987898760947942716987240345848939694761715997362159888600973826751156900555609220790888743740025999230299793544064243879043298212916409644995882402216269430500984875293604247387347906864813420631209694092421835122691978204757365259843133911041855510730348491761489809217001574388802480536754806871602079002639078090882686972389846197310860357454814045493713625987281671002453030336040100862762243166515375325453478710112772872828512191092817916875275018515638616468408401499<br>e1&#x3D; 2333<br>e2&#x3D; 233333<br>c1&#x3D; 10535580994896195022920149725276369550728517109653497605167313046409876392114711560196326080442961900418006494961910365394124741751139407911560528549617803360302930298964663611504612922742851011471528856000257745267336682105026189871357698342783712797886044068590607009919271131664602893210553239321016686661284010373084598469046587511581597418880412859208444658924495417087002828165417300185855579841964907330763110937881082099370202908309703892580008628758527969446083594745635377761542937235043683623818703941165338790898881268602763192803811989171116047782448426708463955903887395692356195335380967072877326451411<br>c2&#x3D; 17369827783748577940154876480301817814021023263993877353288997366853887247406776979669032227371824762523641982735716323577390531652095280124287416186425983706034698854513683234817276509409697491183202830110444409418108682535313039492138723104262570952495123728002384080133077106898682083269747603613433437079188809383512922268727450217314921336629925420263046180177350371627935828411634745831121019119186911273052572219514759499916782905948746235966798266484878832841698644543065103720376602273131313378615378112152930999472585445309346726359167146692862057985234413269903887376016622910994495427260671539450972297487</p>
+<h1 id="wp："><a href="#wp：" class="headerlink" title="wp："></a>wp：</h1><p>#task1 第一步巨tm简单<br>import gmpy2<br>import libnum<br>import random<br>#rb&#x3D;read+转为b，b是字节，二进制形式，read（）是全读，read（10）是读10字节<br>flag&#x3D;open(“flag1”,”rb”).read()<br>#把字符串拆分为单个字符，ascii转数字再拼起来<br>#libnum.n2s(number)是逆向如上<br>m&#x3D; libnum.s2n(flag)<br>#生成1024bit质数相当于 大约 308 位 十进制数，1024*0.3&#x3D;308<br>p &#x3D; libnum.generate_prime(1024)<br>q &#x3D; libnum.generate_prime(1024)<br>n1 &#x3D; p * q<br>n2 &#x3D; p * q<br>e1 &#x3D; 2333<br>e2 &#x3D; 233333<br>c1 &#x3D; pow(m, e1, n1)<br>c2 &#x3D; pow(m, e2, n2)<br>print(“n1&#x3D;”, n1)<br>print(“n2&#x3D;”, n2)<br>print(“e1&#x3D;”, e1)<br>print(“e2&#x3D;”, e2)<br>print(“c1&#x3D;”, c1)<br>print(“c2&#x3D;”, c2)<br>n1&#x3D; 20688295326799885469942053730256934117014637151258278129136776521510989233595867577295112616845005908459077781330791527696392017119074636308132987898760947942716987240345848939694761715997362159888600973826751156900555609220790888743740025999230299793544064243879043298212916409644995882402216269430500984875293604247387347906864813420631209694092421835122691978204757365259843133911041855510730348491761489809217001574388802480536754806871602079002639078090882686972389846197310860357454814045493713625987281671002453030336040100862762243166515375325453478710112772872828512191092817916875275018515638616468408401499<br>n2&#x3D; 20688295326799885469942053730256934117014637151258278129136776521510989233595867577295112616845005908459077781330791527696392017119074636308132987898760947942716987240345848939694761715997362159888600973826751156900555609220790888743740025999230299793544064243879043298212916409644995882402216269430500984875293604247387347906864813420631209694092421835122691978204757365259843133911041855510730348491761489809217001574388802480536754806871602079002639078090882686972389846197310860357454814045493713625987281671002453030336040100862762243166515375325453478710112772872828512191092817916875275018515638616468408401499<br>e1&#x3D; 2333<br>e2&#x3D; 233333<br>c1&#x3D; 10535580994896195022920149725276369550728517109653497605167313046409876392114711560196326080442961900418006494961910365394124741751139407911560528549617803360302930298964663611504612922742851011471528856000257745267336682105026189871357698342783712797886044068590607009919271131664602893210553239321016686661284010373084598469046587511581597418880412859208444658924495417087002828165417300185855579841964907330763110937881082099370202908309703892580008628758527969446083594745635377761542937235043683623818703941165338790898881268602763192803811989171116047782448426708463955903887395692356195335380967072877326451411<br>c2&#x3D; 17369827783748577940154876480301817814021023263993877353288997366853887247406776979669032227371824762523641982735716323577390531652095280124287416186425983706034698854513683234817276509409697491183202830110444409418108682535313039492138723104262570952495123728002384080133077106898682083269747603613433437079188809383512922268727450217314921336629925420263046180177350371627935828411634745831121019119186911273052572219514759499916782905948746235966798266484878832841698644543065103720376602273131313378615378112152930999472585445309346726359167146692862057985234413269903887376016622910994495427260671539450972297487</p>
+<h1 id="task2扩展欧几里得算法"><a href="#task2扩展欧几里得算法" class="headerlink" title="task2扩展欧几里得算法:"></a>task2扩展欧几里得算法:</h1><p>import gmpy2<br>import libnum<br>import random<br>flag&#x3D;open(“flag2”,”rb”).read()<br>m&#x3D; libnum.s2n(flag)<br>p &#x3D; libnum.generate_prime(512)<br>q &#x3D; libnum.generate_prime(512)<br>n &#x3D; p ** 3 * q<br>e &#x3D; 65537<br>c &#x3D; pow(m, e, n)<br>print(“q&#x3D;”, q)<br>print(“n&#x3D;”, n)<br>print(“e&#x3D;”, e)<br>print(“c&#x3D;”, c)<br>q&#x3D; 13322927061392445497402624722516808065211145754534293884502271579117803667441576605927350599378174495246568884282242045254605422350585661723940229995177937<br>n&#x3D; 26773929760522674269634877399716812230396093471027726706473392891600818244999268768791900121293863999793325456042630338561306328654222014238643204179910960002028134631426442524303069164710347838996101289398230883644003619367635782260578737802135634535983356392310233572016020349859794665536710494760490951866146814084172822042456540741782604713932412921538698399624154201276655343341473091286372054775553719586840280254811649612664757178420679106166141911497874922349309850706131162898298813340445628185960438676599345093606657773615335244658949035783689593693908096179118036508918183965966901490838405761862719805183<br>e&#x3D; 65537<br>c&#x3D; 15465133012902139459487131261965491000237056560984000040324069556721021254341772102190320457225791447337860827124406488751474558096126362025171561058734512919315843087231750296347098541381113794815070076413276456616422283934665169867901393320973478107577604594668931583705821397506114844795063174102968326369535144101199866539275331789831156767721220232699760821590124823842628713622402083331293384193630563740627964762784902719911113691372935443754971969715241786949432740019175543224696366208368505734261742118548309842837131002387524558348954368682111938543982145779317988132542588200997701489333748146762081124503</p>
+<h1 id="wp"><a href="#wp" class="headerlink" title="wp:"></a>wp:</h1><p>import gmpy2<br>from Crypto.Util.number import long_to_bytes</p>
+<p>#已知的值<br>n &#x3D; 20688295326799885469942053730256934117014637151258278129136776521510989233595867577295112616845005908459077781330791527696392017119074636308132987898760947942716987240345848939694761715997362159888600973826751156900555609220790888743740025999230299793544064243879043298212916409644995882402216269430500984875293604247387347906864813420631209694092421835122691978204757365259843133911041855510730348491761489809217001574388802480536754806871602079002639078090882686972389846197310860357454814045493713625987281671002453030336040100862762243166515375325453478710112772872828512191092817916875275018515638616468408401499<br>e1&#x3D; 2333<br>e2&#x3D; 233333<br>c1&#x3D; 10535580994896195022920149725276369550728517109653497605167313046409876392114711560196326080442961900418006494961910365394124741751139407911560528549617803360302930298964663611504612922742851011471528856000257745267336682105026189871357698342783712797886044068590607009919271131664602893210553239321016686661284010373084598469046587511581597418880412859208444658924495417087002828165417300185855579841964907330763110937881082099370202908309703892580008628758527969446083594745635377761542937235043683623818703941165338790898881268602763192803811989171116047782448426708463955903887395692356195335380967072877326451411<br>c2&#x3D; 17369827783748577940154876480301817814021023263993877353288997366853887247406776979669032227371824762523641982735716323577390531652095280124287416186425983706034698854513683234817276509409697491183202830110444409418108682535313039492138723104262570952495123728002384080133077106898682083269747603613433437079188809383512922268727450217314921336629925420263046180177350371627935828411634745831121019119186911273052572219514759499916782905948746235966798266484878832841698644543065103720376602273131313378615378112152930999472585445309346726359167146692862057985234413269903887376016622910994495427260671539450972297487</p>
+<p>#使用扩展欧几里得算法求解x和y<br>g, x, y &#x3D; gmpy2.gcdext(e1, e2)</p>
+<p>m &#x3D; (pow(c1, x, n) * pow(c2, y, n)) % n</p>
+<p>#将长整数转换回字节串，得到flag<br>#这个过程并不是逐字节进行的转码，而是根据大整数的值直接计算字节表示。<br>flag &#x3D; long_to_bytes(m)<br>print(flag)<br>#计算 p 是通过先将 n 除以 q 得到一个近似值，然后开三次方。<br>利用 gmpy2.invert() 来计算模逆，从而得到私钥 d<br>最后，使用 libnum.n2s(m) 将解密得到的消息转换为字符串形式。</p>
+<h1 id="task3-NC不互素"><a href="#task3-NC不互素" class="headerlink" title="task3 NC不互素"></a>task3 NC不互素</h1><p>import gmpy2<br>import libnum<br>import random<br>import uuid<br>flag&#x3D;open(“flag3”,”rb”).read()<br>m&#x3D; libnum.s2n(flag)</p>
+<p>p&#x3D;libnum.generate_prime(1024)<br>q&#x3D;libnum.generate_prime(1024)<br>n&#x3D;p<em>q<br>e&#x3D;65537<br>c&#x3D;pow(m</em>p+n,e,n)<br>print(“n&#x3D;”,n)<br>print(“c&#x3D;”,c)<br>print(“e&#x3D;”,e)<br>n&#x3D; 15293119610401369341768139109180772392110088731602724343722004203127446545309690814575232153600919240564221520064663730467209975353514367032533047921089315228027021038413217960875159960100658792613449755232771162178385839790149849869686495409153870164506505922391051307132588818331908776734632426520383687648787240658287632391341050464376126254695374153658370300721277088009238640603093015957481635543641428638187748575240208629303667236929908884797717163755496450666783141896641261199419410119012948923148754080443940538552221399493895884895054442767905458197941531033888957366378905195584213292155628139431842529323<br>c&#x3D; 1794227229746250308837805275661140809134581248361552873305249768234152842273679749395483703332307070671825325208289490077295408202211179939449414555224576782489488268541841564811228687994277051450020033588133309583506657909129340877599611674169611863655458112707110008724904175959750766812007423053681448040462331138402655330868502735581208339213986074408166994790011487823499764672543989155309027958841346515146780723315979269823071855340504634910197845933384688645069829393315419010365600629044135236264375583829986007635917158162990365899983776036912335359819879492808522652666348571117856163461871829825769831047<br>e&#x3D; 65537</p>
+<h1 id="wp-1"><a href="#wp-1" class="headerlink" title="wp:"></a>wp:</h1><p> import gmpy2<br>import libnum</p>
+<p>n &#x3D; 15293119610401369341768139109180772392110088731602724343722004203127446545309690814575232153600919240564221520064663730467209975353514367032533047921089315228027021038413217960875159960100658792613449755232771162178385839790149849869686495409153870164506505922391051307132588818331908776734632426520383687648787240658287632391341050464376126254695374153658370300721277088009238640603093015957481635543641428638187748575240208629303667236929908884797717163755496450666783141896641261199419410119012948923148754080443940538552221399493895884895054442767905458197941531033888957366378905195584213292155628139431842529323<br>c &#x3D; 1794227229746250308837805275661140809134581248361552873305249768234152842273679749395483703332307070671825325208289490077295408202211179939449414555224576782489488268541841564811228687994277051450020033588133309583506657909129340877599611674169611863655458112707110008724904175959750766812007423053681448040462331138402655330868502735581208339213986074408166994790011487823499764672543989155309027958841346515146780723315979269823071855340504634910197845933384688645069829393315419010365600629044135236264375583829986007635917158162990365899983776036912335359819879492808522652666348571117856163461871829825769831047<br>e &#x3D; 65537<br>#下面一行是关键<br>p &#x3D; gmpy2.gcd(n, c)<br>q &#x3D; n &#x2F;&#x2F; p<br>assert n &#x3D;&#x3D; p * q<br>phi_n&#x3D;(p-1)<em>(q-1)<br>d&#x3D;gmpy2.invert(e,phi_n)<br>M&#x3D;pow(c,d,n)<br>#M&#x3D;m</em>p+n，正常逆推求出m是负数，所以猜测n可以忽略不计<br>m&#x3D;M&#x2F;&#x2F;p<br>x&#x3D;q*p<br>print(“解密出的p为:”,p)<br>print(“解密出的q为:”,q)<br>print(d)<br>print(libnum.n2s(int(m)))</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">rezhoukang</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/rezhoukang"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/28/rsa%E4%B9%8B%E8%84%9A%E6%9C%AC%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="Untitled">Untitled</a><time datetime="2024-10-28T11:26:35.778Z" title="Created 2024-10-28 19:26:35">2024-10-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/20/rsa%E4%B9%8B%E5%85%B1%E6%A8%A1%E6%94%BB%E5%87%BB/" title="rsa之共模攻击">rsa之共模攻击</a><time datetime="2024-10-20T12:16:25.711Z" title="Created 2024-10-20 20:16:25">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/20/%E7%9C%8B%E6%88%91/" title="此为ctf目录">此为ctf目录</a><time datetime="2024-10-20T12:14:48.721Z" title="Created 2024-10-20 20:14:48">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/20/hello-world/" title="Hello World">Hello World</a><time datetime="2024-10-20T10:11:57.886Z" title="Created 2024-10-20 18:11:57">2024-10-20</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">October 2024</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">4</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-10-28T11:40:09.841Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By rezhoukang</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
